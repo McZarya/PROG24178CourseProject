@@ -79,14 +79,14 @@ public class MovieCatalog extends Application {
         Delete.setTranslateY(0);
         layout.getChildren().addAll(Delete);
 
-        //Text
+        // Text
         Label movieInfo = new Label("Movie Information");
         layout.getChildren().addAll(movieInfo);
         movieInfo.setTranslateX(190);
         movieInfo.setTranslateY(-250);
         movieInfo.setFont(Font.font("verdance", FontWeight.BOLD, FontPosture.REGULAR, 20));
 
-        //Genre
+        // Genre
         Label genre = new Label("Genre");
         TextField textField = new TextField();
         layout.getChildren().addAll(genre, textField);
@@ -97,7 +97,7 @@ public class MovieCatalog extends Application {
         layout.setSpacing(10);
 
         // Stage
-        Scene scene = new Scene(layout, 595, 300);
+        Scene scene = new Scene(layout, 595, 565);
         primaryStage.setTitle("Movie Catalog");
         primaryStage.setScene(scene);
         primaryStage.show();

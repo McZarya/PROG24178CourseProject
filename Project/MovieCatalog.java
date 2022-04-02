@@ -1,6 +1,4 @@
 import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -22,13 +20,16 @@ public class MovieCatalog extends Application {
         Label label = new Label("List of Movies:");
         Font font = Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 12);
         label.setFont(font);
+        label.setTranslateY(225);
 
         // ListBox for movies
-        ObservableList<String> movies = FXCollections.observableArrayList("The Shawshank Redemption", "The Godfather",
-                "Forrest Gump", "Fight Club", "Pulp Fiction", "Star Wars: Episode V", "WALL-E",
-                "Spider-Man: No Way Home", "Toy Story", "Up");
-        ListView<String> listView = new ListView<String>(movies);
-        listView.setMaxSize(100, 200);
+        ListView<String> listView = new ListView<String>();
+        listView.getItems().addAll("The Shawshank Redemption", "The Godfather",
+        "Forrest Gump", "Fight Club", "Pulp Fiction", "Star Wars: Episode V", "WALL-E",
+        "Spider-Man: No Way Home", "Toy Story", "Up");
+        listView.setMaxSize(150, 250);
+        listView.setTranslateY(230);
+        
 
         // Layout
         VBox layout = new VBox(10);
@@ -86,6 +87,7 @@ public class MovieCatalog extends Application {
         textField.setTranslateY(-220);
         textField.setPrefWidth(150);
         textField.setMaxWidth(150);
+        textField.setText("Movie Title");
         layout.setSpacing(10);
 
         //Genre textfield & label
@@ -99,6 +101,7 @@ public class MovieCatalog extends Application {
         textField2.setTranslateY(-200);
         textField2.setPrefWidth(150);
         textField2.setMaxWidth(150);
+        textField2.setText("Genre");
         layout.setSpacing(10);
 
         //Actor textfield & label
@@ -112,6 +115,7 @@ public class MovieCatalog extends Application {
         textField3.setTranslateY(-200);
         textField3.setPrefWidth(150);
         textField3.setMaxWidth(150);
+        textField3.setText("Actor");
         layout.setSpacing(10);
 
         //Writer textfield & label
@@ -125,32 +129,35 @@ public class MovieCatalog extends Application {
         textField4.setTranslateY(-200);
         textField4.setPrefWidth(150);
         textField4.setMaxWidth(150);
+        textField4.setText("Writer");
         layout.setSpacing(10);
 
         //Director textfield & label
         Label director = new Label("Director");
         TextField textField5 = new TextField();
         layout.getChildren().addAll(director, textField5);
-        director.setTranslateX(550);
-        director.setTranslateY(-325);
+        director.setTranslateX(555);
+        director.setTranslateY(-390);
         director.setFont(Font.font("verdance", FontWeight.BOLD, FontPosture.REGULAR, 13));
         textField5.setTranslateX(500);
         textField5.setTranslateY(-392);
         textField5.setPrefWidth(150);
         textField5.setMaxWidth(150);
+        textField5.setText("Director");
         layout.setSpacing(10);
 
         //Year textfield & label
         Label year = new Label("Year");
         TextField textField6 = new TextField();
         layout.getChildren().addAll(year, textField6);
-        year.setTranslateX(555);
-        year.setTranslateY(-457);
+        year.setTranslateX(550);
+        year.setTranslateY(-385); //-457
         year.setFont(Font.font("verdance", FontWeight.BOLD, FontPosture.REGULAR, 13));
         textField6.setTranslateX(500);
         textField6.setTranslateY(-392);
         textField6.setPrefWidth(150);
         textField6.setMaxWidth(150);
+        textField6.setText("Year");
         layout.setSpacing(10);
 
         //Revenue textfield & label
@@ -164,17 +171,20 @@ public class MovieCatalog extends Application {
         textField7.setTranslateY(-392);
         textField7.setPrefWidth(150);
         textField7.setMaxWidth(150);
+        textField7.setText("Revenue");
         layout.setSpacing(10);
 
         // Stage
-        Scene scene = new Scene(layout, 895, 365);
+        Scene scene = new Scene(layout, 895, 1000); //365
         primaryStage.setTitle("Movie Catalog");
         primaryStage.setScene(scene);
         primaryStage.show();
+
 
     }
 
     public static void main(String[] args) {
         launch(args);
     }
+
 }
